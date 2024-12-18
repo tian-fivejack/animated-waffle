@@ -14,8 +14,7 @@ datasource db {
 }
 
 model DataPungutan {
-  id                 String   @id @default(cuid())
-  kd_moda           String?  
+  id                 BigInt   @id @default(autoincrement())
   id_aju            String   @unique
   fob               String
   cif               String
