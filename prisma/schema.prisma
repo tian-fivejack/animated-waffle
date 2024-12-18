@@ -9,6 +9,16 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model DataPungutan {
+  id                 String   @id @default(cuid())
+  kd_moda           String?  
+  id_aju            String   @unique
+  fob               String
+  cif               String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
